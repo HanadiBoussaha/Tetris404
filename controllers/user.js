@@ -61,5 +61,15 @@ export const register = async(req, res) => {
             res.status(404).json({msg:"Donnée invalide"}); 
     
         }
-    }
+    } 
     
+    export const getOneUser = async (req, res) => {
+
+        try {    let encrypted_id = req.params.encrypted_id
+        let user = await User.findOne({ where: { encrypted_id: encrypted_id }})
+        console.log(user)
+        res.status(200).json({user})
+        }catch (error){
+        
+        res.status(500).json({msg:"Donnée invalide",error})}
+        };
