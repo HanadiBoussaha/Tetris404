@@ -19,14 +19,14 @@ module.exports = {
         type: Sequelize.STRING
       },  
       image: {
-        type: Sequelize.STRING
+         type: Sequelize.BLOB('long')
       },  
-      date: {
-        type: Sequelize.DATE
-      }, 
+   
       idea: {
         type: Sequelize.STRING
       }, 
+
+    
 
       createdAt: {
         allowNull: false,

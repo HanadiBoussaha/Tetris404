@@ -24,4 +24,19 @@ export const addblogs = async(req, res) => {
     console.log(error);
     return res.status(404).json({msg: "erreur to add"});
     }
-    };
+    }; 
+    export const getAllblogs= async ( req, res) => {
+        try {
+    
+            let blog = await blogs.findAll({});
+                   res.status(200).send(blog);
+                   console.log(blog);
+            
+             } catch (error){
+                 console.log(error);
+                 return res.status(404).json({msg: "problem"});
+         
+             } 
+    
+    
+    }

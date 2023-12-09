@@ -13,9 +13,9 @@ const createblogs = (sequelize, DataTypes) => {
   blogs.init({ 
     titre: DataTypes.STRING,
     description: DataTypes.STRING, 
-    image: DataTypes.STRING, 
-    date:DataTypes.DATE, 
-    idea:DataTypes.STRING
+    image:DataTypes.BLOB('long'),
+    idea:DataTypes.STRING , 
+
   }, {
     sequelize,
     modelName: 'blogs',
